@@ -13,7 +13,6 @@ angular
     'ui.router',
     'ui.bootstrap',
     'angular-loading-bar',
-    'companyServices',
   ])
   .config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider',function ($stateProvider,$urlRouterProvider,$ocLazyLoadProvider) {
 
@@ -60,7 +59,7 @@ angular
                 $ocLazyLoad.load(
                 {
                   name:'ngResource',
-                  files:['bower_components/angular-animate/angular-animate.js']
+                  files:['bower_components/angular-resource/angular-resource.js']
                 })
                 $ocLazyLoad.load(
                 {
@@ -164,7 +163,7 @@ angular
               $ocLazyLoad.load(
               {
                 name:'ngResource',
-                files:['bower_components/angular-animate/angular-animate.js']
+                files:['bower_components/angular-resource/angular-resource.js']
               })
               $ocLazyLoad.load(
               {
@@ -188,7 +187,7 @@ angular
           return $ocLazyLoad.load({
             name:'sbAdminApp',
             files:[
-            'scripts/services/companiesServices.js'
+            'scripts/services/companiesServices.js',
             'scripts/controllers/companyControllers.js',
 
             ]

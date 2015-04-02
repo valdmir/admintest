@@ -1,8 +1,6 @@
 var companyServices = angular.module('companyServices', ['ngResource']);
 
-companyServices.factory('Phone', ['$resource',
+companyServices.factory('Companies', ['$resource',
   function($resource){
-    return $resource('phones/:phoneId.json', {}, {
-      query: {method:'GET', params:{phoneId:'phones'}, isArray:true}
-    });
+    return $resource('127.0.0.1:8080/companies/');
   }]);
