@@ -7,10 +7,7 @@
  * Controller of the sbAdminApp
  */
 
- var sbAdminApp = angular.module('sbAdminApp',[])
- .service('companyServices',function(){
-   console.log("testing");
- });
+ var sbAdminApp = angular.module('sbAdminApp',[]);
 
 // sbAdminApp.controller('CompanyListCtrl',function($scope){
 //     $scope.companies=[
@@ -36,15 +33,16 @@
 //
 //
 //   });
-sbAdminApp.controller('CompanyListCtrl',['$scope','Companies',function($scope,Companies){
-
-    $scope.companies=Companies.query();
-}]);
-
-// sbAdminApp.controller('CompanyListCtrl',['$scope','$http',function($scope,$http){
+// sbAdminApp.controller('CompanyListCtrl',['$scope','Companies',function($scope,Companies){
 //
-//   $http.get('http://127.0.0.1:8080/companies/').success(function(data) {
-//     $scope.companies = data;
-//
-//   });
+//     $scope.companies=Companies.query();
 // }]);
+
+sbAdminApp.controller('CompanyListCtrl',['$scope','$http',function($scope,$http){
+
+  $http.get('http://admin:admin@127.0.0.1:8080/companies/').success(function(data) {
+
+    //$scope.companies = data;
+
+  });
+}]);
